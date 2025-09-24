@@ -1,40 +1,35 @@
-#Day 1 notes: Code is not working as intended, but we're making some progress. 
-#The aim is to enter the destination, then press enter, but that is not happening. Will troubleshoot within the coming day
+#Day 4 notes: halfway there. Clicking enter functions 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 import time
 
-def flight_booking():l
+#Imported keys
+def flight_booking():
     driver = webdriver.Chrome()
+    driver.maximize_window() #Increases the size of the browser window.
     
     try:
         driver.get("https://www.flysafair.co.za/")
         
-        #condition 1: clicks on round trip
-        round_trip= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@name='searchType']")))
-        round_trip.click()
-        time.sleep(5)
+        #condition 1: clicks on one way
+        #one_way= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "id*='search-type-oneway']" )))
+        #one_way.click()
+        #time.sleep(5)
         
         #condition 2: Departure point
         
         departure= WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@type='search']")))  #Relative custom Xpath
         departure.send_keys("Johannesburg")
+        departure.send_keys(Keys.ENTER) #press enter after typing
         time.sleep(5)
         
         # Destination
-        destination= WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[aria-labelledby='vs8__combobox']"))) #css selector
+        destination= WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[placeholder='Please select destination']"))) #css selector
         destination.send_keys("durban")
-       
-        
-        # Clicking departure and destination
-        departure_click =  WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@type='search']"))) #Relative custom Xpath
-        departure_click.click()
-        time.sleep(5)
-        
-        destination_click= WebDriverWait(driver, 10).until( EC.element_to_be_clickable((By.CSS_SELECTOR,"input[aria-labelledby='vs8__combobox']")))
-        destination_click.click()
+        destination.send_keys(Keys.ENTER) #press enter after typing
         time.sleep(5)
         
      
