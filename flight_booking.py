@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 import time
 
-#Imported keys
 def flight_booking():
     driver = webdriver.Chrome()
     driver.maximize_window() #Increases the size of the browser window.
