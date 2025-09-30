@@ -19,6 +19,12 @@ def flight_booking():
         #one_way.click()
         #time.sleep(5)
         
+        #Clicks on the accept popup
+        #Works
+        accept_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//button[text()='Accept']")))
+        accept_button.click()
+        time.sleep(5)
+        
         #condition 2: Departure point
         
         departure= WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@type='search']")))  #Relative custom Xpath
@@ -48,11 +54,30 @@ def flight_booking():
         calender.click()
         time.sleep(5)
         
+        
+        #Click the next month
+        click_right = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[class*='arrow is-right']")))
+        click_right.click()
+        time.sleep(5)
+        
         # Select the departure date
-        #Almost works
-        departure_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//span[text()='4']")))
+        # Works
+        departure_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@aria-label='Sunday, 5 October 2025']")))
         departure_date.click()
         time.sleep(6)
+        
+        # Return trip
+        
+         # Click on the calender 
+        # Works
+        calender = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[class*='date-selector__input']")))
+        calender.click()
+        time.sleep(5)
+        
+        return_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[aria-label*='Wednesday, 15 October 2025']")))
+        return_date.click()
+        time.sleep(6)
+        
     
         print(driver.page_source)
     finally:
