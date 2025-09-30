@@ -52,7 +52,7 @@ def flight_booking():
         #Almost works
         departure_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//span[text()='4']")))
         departure_date.click()
-        time.sleep(5)
+        time.sleep(6)
     
         print(driver.page_source)
     finally:
