@@ -1,4 +1,4 @@
-#Day 4 notes: halfway there. Clicking enter functions 
+# Phase 1 Complete!
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -62,21 +62,27 @@ def flight_booking():
         
         # Select the departure date
         # Works
-        departure_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@aria-label='Sunday, 5 October 2025']")))
+        departure_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@aria-label='Wednesday, 5 November 2025']")))
         departure_date.click()
         time.sleep(6)
         
         # Return trip
         
          # Click on the calender 
-        # Works
-        calender = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[class*='date-selector__input']")))
+        #  Departure and Return have the same xpath locator. Fix immediately
+        calender = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Return')]"))) #Xpath uses the "Return" label above the calendar
         calender.click()
         time.sleep(5)
         
-        return_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[aria-label*='Wednesday, 15 October 2025']")))
+        return_date =WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[aria-label*='Saturday, 15 November 2025']")))
         return_date.click()
         time.sleep(6)
+        
+        #Final condition: Click on Let's go
+        
+        next_stage_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR,"[type*='submit']" )))
+        next_stage_button.click()
+        time.sleep(5)
         
     
         print(driver.page_source)
