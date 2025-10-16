@@ -69,8 +69,7 @@ def flight_booking():
         
         # Return trip
         
-         # Click on the calender 
-        #  Departure and Return have the same xpath locator. Fix immediately
+         # Click on calender 
         calender = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//label[contains(text(),'Return')]"))) #Xpath uses the "Return" label above the calendar
         calender.click()
         time.sleep(5)
@@ -80,7 +79,8 @@ def flight_booking():
         return_date.click()
         time.sleep(6)
         
-        #Final condition: Click on Let's go
+        #Final condition: 
+        # Click on Let's go
         
         next_stage_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR,"[type*='submit']" )))
         next_stage_button.click()
@@ -88,6 +88,7 @@ def flight_booking():
         
     
         print(driver.page_source)
+        #Close browser
     finally:
         driver.quit()
         
