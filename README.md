@@ -1,5 +1,7 @@
 # FlySafair Automation Suite
-This project is a Selenium-powered automation suite that simulates real-world flight booking on FlySafair — built with Pytest, structured in OOP, and designed for clarity, scalability, and recruiter visibility.
+# FlySafair Automation Suite
+
+This project is a Selenium-powered automation suite that simulates real-world flight booking on FlySafair — built for clarity, scalability, and recruiter visibility.
 
 ---
 
@@ -27,8 +29,8 @@ Follow these steps to set up and run the automation script:
 ---
 
 ### Tools and programming languages used: <br>
-- Selenium with Python
-- Pytest
+
+- Selenium webdriver with Python
 
 
 
