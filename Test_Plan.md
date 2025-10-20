@@ -46,20 +46,12 @@ The test environment remained consistent throughout the testing process.
 ---
 ## Bug Report Template
 
-**Title**: Login with Invalid Credentials Shows No Feedback
-**Description**: Logging in with invalid credentials does not give an Error message and instead resets the form.
-**Environment**: Chrome Desktop
+**Title**:
+**Preconditions**:
 **Steps to Reproduce**:  
-1. Go to login page  
-2. Enter invalid credentials 
-3. Click Login 
-
-**Expected**: A clear error message appears  
-**Actual**: Nothing happens, and the form resets  
-**Severity**: Major 
-**Priority**: High
-
-End of test plan
+**Expected Result**: 
+**Actual Result**:  
+**Priority**:
 
 ## Test Results (Summary)
 
