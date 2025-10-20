@@ -105,3 +105,32 @@ Overall pass rate (total tests): 92.31%
 
 All in-scope features passed validation with no defects found in the executed tests. Proceed with planned next-phase testing for payment and mobile coverage before final sign-off.
 
+## How to run tests
+
+Quick, beginner-friendly steps to run the existing Selenium test script (`flight_booking.py`) on Windows PowerShell. This keeps things simple and intentionally omits pytest.
+
+1. Create and activate a Python virtual environment:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+2. Install Selenium (and `webdriver-manager` optionally):
+
+```powershell
+pip install selenium
+pip install webdriver-manager  # optional, simplifies driver handling
+```
+
+3. Run the script:
+
+```powershell
+python flight_booking.py
+```
+
+Notes:
+- If you see driver version errors, either use `webdriver-manager` or download the ChromeDriver matching your installed Chrome browser and add it to your PATH.
+- Use only test data; do not include real personal information in automated runs.
+
+
