@@ -39,16 +39,14 @@ Overall pass rate (total tests): 92.31%
 - Payment and post-submission confirmation with reference numbers were not executed (out of scope).
 
 ## Metrics
-- Test execution time: (recorded per session in test logs; refer to test run output)
 - Test stability: No intermittent or flaky failures observed during runs.
 - Defect density: 0 defects / 12 executed tests = 0.0 defects/test (for executed scope)
 
 ## Recommendations / Next Steps
 1. Execute out-of-scope payment and confirmation tests (TC-FR-010) before release to production.
-2. Add cross-platform mobile testing (iOS/Android) and additional browsers to broaden coverage.
-3. Run regression test suite after any change to search, passenger form, or booking summary logic.
-4. Automate the executed test cases (if not already automated) and integrate into CI for frequent validation.
-5. If future defects arise, use the Bug Report Template in the Test Plan for consistent reporting.
+2. Run regression test suite after any change to search, passenger form, or booking summary logic.
+3. Automate the executed test cases (if not already automated) and integrate into CI for frequent validation.
+4. If future defects arise, use the Bug Report Template in the Test Plan for consistent reporting.
 
 ## Conclusion
 All in-scope features passed validation with no defects found in the executed tests. Proceed with planned next-phase testing for payment and mobile coverage before final sign-off.
