@@ -27,12 +27,6 @@ Follow these steps to set up and run the automation script:
 
 ---
 
-### Tools and programming languages used: <br>
-
-- Selenium webdriver with Python
-
----
-
 ## Current Status
 - ✅ Test Plan completed
 - ✅ Test Cases documented and executed
