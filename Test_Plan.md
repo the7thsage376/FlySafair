@@ -1,5 +1,8 @@
 # Test Plan: Flysafair Flight Booking
 
+## Overview
+This project automates the testing of FlySafair's flight booking system using Selenium WebDriver with Python. The automation covers the core booking flow: flight search, passenger details entry, and booking confirmation. The focus is on validating essential user interactions such as date selection, passenger count specification, and form validation across different browsers and network conditions.
+
 ---
 # Scope and Objectives:
 
